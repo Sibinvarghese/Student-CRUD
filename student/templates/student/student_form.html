@@ -1,0 +1,42 @@
+{% extends 'student/home.html'%}
+{% load crispy_forms_tags %}
+{% block context %}
+<form class="form-control" action="" method="POST" autocomplete="off">
+    {% csrf_token %}
+    <div class="row">
+        <div class="col-6">
+            {{form.fname|as_crispy_field}}
+        </div>
+        <div class="col-6">
+            {{form.lname|as_crispy_field}}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-8">
+            {{form.age|as_crispy_field}}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-8">
+            {{form.phnumber|as_crispy_field}}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-8">
+            {{form.course|as_crispy_field}}
+        </div>
+    </div>
+   
+    <div class="row">
+        <div class="col-4"><p></p></div>
+    </div>
+    
+    <div class="row">
+        <div class="col-md-8">
+            <button type="submit" class="btn btn-success btn-block btn-lg">
+            <i class="fas fa-database"></i>Submit</button> 
+        </div>
+    </div>
+    
+</form>
+{% endblock context %}
